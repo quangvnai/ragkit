@@ -1,0 +1,29 @@
+[project]
+name = "rag-from-scratch"
+version = "0.1.0"
+description = "RAG From Scratch — modular LangChain RAG techniques as an installable package"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.2",
+    "langchain-community>=0.2",
+    "langchain-openai>=0.1",
+    "langchainhub>=0.1",
+    "chromadb>=0.5",
+    "tiktoken>=0.7",
+    "beautifulsoup4>=4.12",
+    "pydantic-settings>=2.0",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+colbert = ["ragatouille>=0.0.7"]
+rerank  = ["cohere>=5.0", "langchain-cohere>=0.1"]
+youtube = ["youtube-transcript-api", "pytube"]
+dev     = ["pytest>=8.0", "pytest-mock>=3.0", "jupyter", "ipykernel"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rag"]

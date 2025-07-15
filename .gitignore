@@ -1,0 +1,33 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Package install artefacts
+*.egg
+
+# Vector store data
+.chroma/
+chroma_db/
+
+# ColBERT indexes
+.ragatouille/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+
+.vscode/
+docs/
+notebooks/
+Makefile
