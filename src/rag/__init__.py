@@ -1,1 +1,1 @@
-"""RAG From Scratch — modular RAG techniques built on LangChain."""
+"""ragkit — A modular toolkit covering every RAG technique, from naive to Self-RAG."""

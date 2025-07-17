@@ -1,7 +1,7 @@
 [project]
-name = "rag-from-scratch"
+name = "ragkit"
 version = "0.1.0"
-description = "RAG From Scratch — modular LangChain RAG techniques as an installable package"
+description = "A modular toolkit covering every RAG technique — from naive to Self-RAG"
 requires-python = ">=3.11"
 dependencies = [
     "langchain>=0.2",
