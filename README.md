@@ -27,33 +27,10 @@ Each technique is an importable, composable module — swap retrieval strategies
 ## Setup
 
 ```bash
-git clone https://github.com/yourname/ragkit
+git clone https://github.com/quangvnai/ragkit
 cd ragkit
 pip install -e ".[dev]"
 cp .env.example .env   # then edit .env
 ```
 
 Requires [LM Studio](https://lmstudio.ai) running locally with Gemma loaded, or set `LLM_PROVIDER=openai` in `.env`.
-
-## Quick start
-
-```python
-from rag.config import settings
-from rag.indexing import load_web, tiktoken_splitter, build_chroma
-from rag.generation.chain import build_rag_chain
-
-docs      = load_web("https://lilianweng.github.io/posts/2023-06-23-agent/")
-splits    = tiktoken_splitter().split_documents(docs)
-retriever = build_chroma(splits).as_retriever()
-chain     = build_rag_chain(retriever)
-
-print(chain.invoke("What is task decomposition?"))
-```
-
-Swap to RAG-Fusion in one line:
-
-```python
-from rag.retrieval.rag_fusion import rag_fusion_retriever
-
-chain = build_rag_chain(rag_fusion_retriever(retriever))
-```
