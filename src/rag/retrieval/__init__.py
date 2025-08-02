@@ -3,6 +3,7 @@ from rag.retrieval.decomposition import decomposition_chain
 from rag.retrieval.hyde import hyde_retriever
 from rag.retrieval.multi_query import multi_query_retriever
 from rag.retrieval.rag_fusion import rag_fusion_retriever, reciprocal_rank_fusion
+from rag.retrieval.reranker import cohere_rerank_retriever
 from rag.retrieval.step_back import step_back_chain
 
 __all__ = [
@@ -13,5 +14,6 @@ __all__ = [
     "multi_query_retriever",
     "rag_fusion_retriever",
     "reciprocal_rank_fusion",
+    "cohere_rerank_retriever",
     "step_back_chain",
 ]
