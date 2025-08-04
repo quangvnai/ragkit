@@ -10,5 +10,5 @@ def tiktoken_splitter(
     """Return a tiktoken-aware recursive splitter using project defaults."""
     return RecursiveCharacterTextSplitter.from_tiktoken_encoder(
         chunk_size=chunk_size or settings.chunk_size,
-        chunk_overlap=chunk_overlap or settings.chunk_overlap,
+        chunk_overlap=chunk_overlap if chunk_overlap is not None else settings.chunk_overlap,
     )

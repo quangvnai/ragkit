@@ -14,7 +14,7 @@ def build_chroma(
     persist_dir=None  → in-memory (notebook use, discarded on exit)
     persist_dir=<path> → disk-backed (index once, reuse across runs)
     """
-    kwargs: dict = {"collection_name": collection, "embedding_function": get_embeddings()}
+    kwargs: dict = {"collection_name": collection, "embedding": get_embeddings()}
     if persist_dir is not None:
         kwargs["persist_directory"] = persist_dir
     return Chroma.from_documents(documents=docs, **kwargs)
